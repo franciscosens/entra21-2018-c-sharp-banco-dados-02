@@ -99,6 +99,26 @@ namespace ExemploBancoDados02
             new CadastroHeroi(codigo).ShowDialog();
         }
 
+        private void txtPequisa_Leave(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void rbColunaNome_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void rbColunaRaca_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void ListaHerois_Activated(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
 
     }
 }

@@ -19,12 +19,14 @@ namespace ExemploBancoDados02.Repositorio
             connection = new SqlConnection(connectionString);
         }
 
-        public bool Inserir(Heroi heroi)
+        public int Inserir(Heroi heroi)
         {
             connection.Open();
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "INSERT INTO herois (nome, escuridao, nome_pessoa, raca, conta_bancaria, data_nascimento, sexo, quantidade_filmes, descricao) VALUES (@NOME, @ESCURIDAO, @NOME_PESSOA, @RACA, @CONTA_BANCARIA, @DATA_NASCIMENTO, @SEXO, @QUANTIDADE_FILMES, @DESCRICAO)";
+            command.CommandText = @"INSERT INTO herois (nome, escuridao, nome_pessoa, raca, conta_bancaria, data_nascimento, sexo, quantidade_filmes, descricao)
+            OUTPUT INSERTED.ID
+            VALUES (@NOME, @ESCURIDAO, @NOME_PESSOA, @RACA, @CONTA_BANCARIA, @DATA_NASCIMENTO, @SEXO, @QUANTIDADE_FILMES, @DESCRICAO)";
 
             command.Parameters.AddWithValue("@NOME", heroi.Nome);
             command.Parameters.AddWithValue("@ESCURIDAO", heroi.Escuridao);
@@ -36,9 +38,9 @@ namespace ExemploBancoDados02.Repositorio
             command.Parameters.AddWithValue("@QUANTIDADE_FILMES", heroi.QuantidadeFilmes);
             command.Parameters.AddWithValue("@DESCRICAO", heroi.Descricao);
 
-            int quantidadeRegistros = command.ExecuteNonQuery();
+            int id = Convert.ToInt32(command.ExecuteScalar().ToString());
             connection.Close();
-            return quantidadeRegistros == 1;
+            return id;
 
         }
 
@@ -62,7 +64,7 @@ WHERE id = @ID";
             comando.Parameters.AddWithValue("@CONTA_BANCARIA", heroi.ContaBancaria);
             comando.Parameters.AddWithValue("@NOME_PESSOA", heroi.NomePessoa);
             comando.Parameters.AddWithValue("@RACA", heroi.Raca);
-            comando.Parameters.AddWithValue("@SEXO", heroi.Sexo);
+            comando.Parameters.AddWithValue("@SEXO",     heroi.Sexo);
             comando.Parameters.AddWithValue("@QUANTIDADE_FILMES", heroi.QuantidadeFilmes);
             comando.Parameters.AddWithValue("@ESCURIDAO", heroi.Escuridao);
             comando.Parameters.AddWithValue("@DESCRICAO", heroi.Descricao);
@@ -115,6 +117,10 @@ WHERE id = @ID";
 
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
+            if (tabelaEmMemoria.Rows.Count == 0)
+            {
+                return null;
+            }
 
             Heroi heroi = new Heroi();
             heroi.Id = Convert.ToInt32(tabelaEmMemoria.Rows[0][0].ToString());
