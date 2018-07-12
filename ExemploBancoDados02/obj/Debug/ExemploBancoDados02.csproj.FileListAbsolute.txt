@@ -1,0 +1,12 @@
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\bin\Debug\ExemploBancoDados02.exe.config
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\bin\Debug\ExemploBancoDados02.exe
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\bin\Debug\ExemploBancoDados02.pdb
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.csprojResolveAssemblyReference.cache
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.Properties.Resources.resources
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.csproj.GenerateResource.Cache
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.exe
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.pdb
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.CadastroHeroi.resources
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.ListaHerois.resources
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.formteste.resources
+C:\Users\fsens\Documents\GitHub\ExemploBancoDados02\ExemploBancoDados02\obj\Debug\ExemploBancoDados02.EstatisticasHerois.resources
